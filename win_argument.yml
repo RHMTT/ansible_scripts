@@ -3,13 +3,13 @@
   hosts: windows
   gather_facts: false
   tasks:
-  - name: Copy a single file keeping the filename
+  - name: Copy powershell file
     ansible.windows.win_copy:
       src: "{{ item }}"
       dest: C:\Temp\
     loop:
       - win_users_services.ps1
       
-  - name: run powershell script to show users
+  - name: run powershell script
     ansible.windows.win_shell: C:\Temp\win_users_services.ps1 "{{ win_argument }}"
     changed_when: False
