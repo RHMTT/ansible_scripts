@@ -1,7 +1,6 @@
 ---
 - name: playbook to run powershell scripts
   hosts: windows
-  become: true
   tasks:
   - name: run powershell script to show users
     ansible.windows.win_shell: win_users.ps1
