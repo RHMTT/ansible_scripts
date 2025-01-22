@@ -8,8 +8,8 @@
       src: "{{ item }}"
       dest: C:\Temp\
     loop:
-      - files\win_users.ps1
-      - files\win_services.ps1
+      - win_users.ps1
+      - win_services.ps1
       
   - name: run powershell script to show users
     ansible.windows.win_shell: C:\Temp\win_users.ps1
