@@ -2,8 +2,13 @@
 - name: playbook to run powershell scripts
   hosts: windows
   tasks:
+  - name: Copy a single file keeping the filename
+    ansible.windows.win_copy:
+      src: files/*.ps1
+      dest: C:\Temp\
+    
   - name: run powershell script to show users
-    ansible.windows.win_shell: win_users.ps1
+    ansible.windows.win_shell: C:\Temp\win_users.ps1
 
   - name: run powershell script to show services
-    ansible.windows.win_shell: win_services.ps1
+    ansible.windows.win_shell: C:\Temp\win_services.ps1
