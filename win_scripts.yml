@@ -5,7 +5,7 @@
   tasks:
   - name: Copy a single file keeping the filename
     ansible.windows.win_copy:
-      src: *.ps1
+      src: "*.ps1"
       dest: C:\Temp\
   #  loop:
   #    - win_users.ps1
