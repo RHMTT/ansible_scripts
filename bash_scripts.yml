@@ -5,6 +5,11 @@
   tasks:
   - name: run script to show users and lat login time
     ansible.builtin.script: users.sh
+    register: users_out
 
   - name: run script to show running and stopped services
     ansible.builtin.script: services.sh
+
+  - name: show the users stdout
+    ansible.builtin.debug:
+      var: users_out.stdout
